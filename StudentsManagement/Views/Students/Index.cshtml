@@ -1,7 +1,21 @@
-﻿
+﻿@model IEnumerable<StudentsManagement.Entities.Student>
 @{
     ViewBag.Title = "Gestion des étudiants";
 }
+<h2>Gestion des étudiants</h2>
 
-    <h2>Gestion des étudiants</h2>
+<table>
+    <tr>
+        <td>Nom</td>
+        <td>Prénom</td>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.FirstName</td>
+            <td>@student.LastName</td>
+        </tr>
+    }
+</table>
+
 

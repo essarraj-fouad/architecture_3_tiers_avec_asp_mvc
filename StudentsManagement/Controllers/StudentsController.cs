@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentsManagement.BLL;
+using StudentsManagement.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,14 @@ namespace StudentsManagement.Controllers
 {
     public class StudentsController : Controller
     {
-        // GET: Students
+        /// <summary>
+        /// Affichage de la list des étudiants
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            List<Student> students = new StudentBLO().FindAll();
+            return View(students);
         }
     }
 }
