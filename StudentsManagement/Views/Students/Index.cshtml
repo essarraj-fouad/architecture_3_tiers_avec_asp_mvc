@@ -4,16 +4,22 @@
 }
 <h2>Gestion des étudiants</h2>
 
-<table>
+<a href="/Students/Create" class="btn btn-primary" style="float:right ; margin-bottom:5px" >Ajouter</a>
+
+<table class="table">
     <tr>
         <td>Nom</td>
         <td>Prénom</td>
+        <td>Actions</td>
     </tr>
     @foreach (var student in Model)
     {
         <tr>
             <td>@student.FirstName</td>
             <td>@student.LastName</td>
+            <td>
+                <a href="/Students/Edit/@student.Id" class="btn btn-default" >Edit</a>
+            </td>
         </tr>
     }
 </table>
